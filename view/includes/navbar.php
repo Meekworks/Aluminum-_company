@@ -16,9 +16,11 @@
 
                             <a href="index.php" class="logo logo-light">
                                 <span class="logo-sm">
+                                    <!-- <h2 class="text-reponsive font-weight-bold" style="margin-top: 20px;">TrakWise</h2> -->
                                     <img src="assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
+                                    <!-- <h2 class="text-reponsive font-weight-bold" style="margin-top: 20px;">TrakWise</h2> -->
                                     <img src="assets/images/logo-light.png" alt="" height="18">
                                 </span>
                             </a>

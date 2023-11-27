@@ -21,17 +21,14 @@
                                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                                 <tr>
-                                                <th>SN</th>
+                                                <th>#</th> 
                                                 <th>Item Name</th>
                                                 <th>Category</th>
-                                                <th>Brand</th>
                                                 <th>Item Code</th>
-                                                <th>Cost</th>
-                                                <th>Price</th>
-                                                <th>Color</th>
-                                                <th>Unit</th>
-                                                <th>Size</th>
-                                                <th>View</th>    
+                                                <th>Uint Cost</th>
+                                                <th>Selling Price</th>
+                                                <th>Guage</th>
+                                                <th>View</th>   
                                                 </tr>
                                             </thead>
 
@@ -47,15 +44,17 @@
                                             echo '
                                             <tr>
                                              <td>'.$count++.'</td>
-                                             <td>'.$result[$k]["product"].'</td>
-                                             <td>'.$result[$k]["brand"].'</td>
+                                             <td>'.$result[$k]["product_name"].'</td>
                                              <td>'.$result[$k]["category"].'</td>
                                              <td>'.$result[$k]["item_code"].'</td>
                                              <td>'.$result[$k]["purchase_price"].'</td>
-                                             <td>'.$result[$k]["sell_price"].'</td>
-                                             <td>'.$result[$k]["color"].'</td>
-                                             <td>'.$result[$k]["unit"].'</td>
-                                              <td>'.$result[$k]["size"].'</td>';
+                                             <td>'.$result[$k]["selling_price"].'</td>
+                                             <td>'.$result[$k]["guage"].'</td>';
+
+                                             echo '<td><a class="btn btn-success btn-sm btn-responsive text-white" href="?action=PriceManage&&PriceManageDeatails='.$result[$k]["item_code"].'">Edit</a>';
+
+
+
                                              // if($DBinfo['role'] == "CEO" || $DBinfo['role'] == "MD" ){
                                                  
                                              //    echo '<td><a class="btn btn-success btn-sm btn-responsive text-white" href="?action=PriceManage&&PriceManageDeatails='.$result[$k]["item_code"].'">Edit</a>';
@@ -65,7 +64,7 @@
                                            
                                              echo'
 
-                                             <td><a class="btn btn-success btn-sm btn-responsive text-white" href="?action=PriceManage&&PriceManageDeatails='.$result[$k]["item_code"].'">Edit</a>
+                                             
                                                 
                                              </td>
                                              

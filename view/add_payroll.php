@@ -4,12 +4,18 @@
             <div class="col-md-8">
                 <h6 class="page-title">Add Payroll</h6>
             </div>
-
+            <!-- <div class="col-md-4">
+                <div class="float-end d-none d-md-block">
+                    <div class="dropdown">
+                        <a href="?action=View_staff" class="btn btn-primary btn-sm waves-effect waves-light"><i class="fas fa-arrow-circle-left fa-sm  text-white"></i> Back</a>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
 
 
-     <div class="row">
+    <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -17,22 +23,21 @@
                   <div class="col-lg-12 col-xl-12">
                           <div class="card">
                           <div class="card-body">
-                          <div class="media align-items-center mb-4">
-                             <!-- <div class="media-body">
+                          <!-- <div class="media align-items-center mb-4">
+                             <div class="media-body">
                                   <h4 class="mb-0"> Edit</h4>
-                            </div> -->
-                          </div>
-                          <!-- <form method="POST" action="" enctype="multipart/form-data"> -->
+                            </div>
+                          </div> -->
 
 
+                <form method="POST" action="" enctype="multipart/form-data">
 
-                             <form method="POST" action="" enctype="multipart/form-data">
-
-                                 <table>
-                <tr class="mr-4">
-                    <td>Month: </td>
-                    <td>
-                        <select class="form-control mr-4" name="months" id="months" onchange="Fetch_Employee_basicSalary()">
+                    <div data-repeater-list="group-a">
+                        <div class="row" data-repeater-item>
+                                                                 
+                        <div  class="mb-3 col-lg-3">
+                            <label class="form-label" for="email">Month:</label>
+                            <select class="form-control mr-4" name="months" id="months" onchange="Fetch_Employee_basicSalary()">
                             <option></option>
                             <option>January</option>
                             <option>Febuary</option>
@@ -46,57 +51,50 @@
                             <option>October</option>
                             <option>November</option>
                             <option>December</option>
-                        </select>
-                    </td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td>Year: </td>
+                            </select>
+                        </div>
 
-                    <td>
+                        <div  class="mb-3 col-lg-2">
+                            <label class="form-label" for="email">Year</label>
+                            <select class="form-control" name="years" id="years" onchange="Fetch_Employee_basicSalary()">
+                                <?php 
+                                   for($i = 1960 ; $i <= date('Y'); $i++){
+                                      echo "<option>$i</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
 
-                        <select style="width:90px;" class="form-control" name="years" id="years" onchange="Fetch_Employee_basicSalary()">
-                        <?php 
-                           for($i = 1960 ; $i <= date('Y'); $i++){
-                              echo "<option>$i</option>";
-                           }
-                        ?>
-                        </select>
-                    </td>
-
-                               <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                  
-                                <td> Loan_Amount:</td>
-                                <td>
-                                    <input type="text" readonly style="width:160px;" class="form-control" name="loan_amount" id="loanid">
-                                </td>
-                            
-
-                                <td> Amount_paid:</td>
-                                <td>
-                                    <input type="text" readonly style="width:150px;" class="form-control" name="amountPaid" id="amountPaid">
-                                </td>
-                           
-
-                             
-                                <td> Months:</td>
-                                <td>
-                                    <input type="text" readonly style="width:70px;" class="form-control" name="tenureid" id="tenureid">
-                                </td>
-                            
-
-                        </tr>
-                        </table><br />
+                        <div  class="mb-3 col-lg-3">
+                            <label class="form-label" for="email">Loan_Amount</label>
+                            <input type="text" readonly class="form-control" name="loan_amount" id="loanid">
+                        </div>
 
 
+                         <div  class="mb-3 col-lg-2">
+                            <label class="form-label" for="email">Amount_paid</label>
+                            <input type="text" readonly class="form-control" name="amountPaid" id="amountPaid">
+                        </div>
 
-              <div class="form-group row ">
+                        <div  class="mb-3 col-lg-2">
+                            <label class="form-label" for="email">Months</label>
+                            <input type="text" readonly class="form-control" id="oldBal"  placeholder="Balance will appear here"></span>
+                        </div>
+
+                    </div>
+
+                    </div>
+
+
+                     <div class="form-group row mb-3 ">
 
                         <div class="col-sm-6">
                              <label class="col-form-label">Employee Name</label>
                                 <select class="form-control text-dark;" name="Employee" id="Acount_ID" onchange="Choosesite_Under_Sel();Choosesite_Get_Loan();">  
-                                   <option>-Staff Name-</option>
+                                    <option>-Staff Name-</option>
                                       <?php 
-                                        // $maineg = new mainClass();
-                                        // $maineg->selectStaff('staff');
+                                        $maineg = new mainClass();
+                                        $maineg->selectStaff('staff');
                                         ?>
                                 </select>
                         </div>
@@ -112,7 +110,7 @@
 
 
 
-                    <div class="form-group row ">
+                    <div class="form-group row mb-3 ">
 
                        <div class="col-sm-6">
                         <label class="col-form-label">Others</label>
@@ -130,7 +128,7 @@
 
 
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-3">
 
 
                          <div class="col-sm-6">
@@ -147,42 +145,46 @@
                     </div>
 
 
-                     <div class="form-group row">
-                         <tr>
-                                <td> Loan Amount Paying:</td>
-                                <td>
-                                    <input type="number" min="0" class="form-control" name="loan" id="loan_pay" placeholder="Enter Loan Amount to be Paid" onkeyup="payrollMaths_earnings()">
-                                </td>
-                            </tr>
+                     <div class="form-group row mb-3">
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Loan Amount Paying:</label>
+                            <input type="number" min="0" class="form-control" name="loan" id="loan_pay" placeholder="Enter Loan Amount to be Paid" onkeyup="payrollMaths_earnings()">
+                        </div>
 
 
-                     <div class="col-sm-6">
-                         <label class="col-form-label">Gross Pay</label>
-                        <input type="number" min="0" class="form-control" name="gross_pay" readonly id="grosspay">
-                    </div>
+                        <div class="col-sm-6">
+                             <label class="col-form-label">Gross Pay</label>
+                            <input type="number" min="0" class="form-control" name="gross_pay" readonly id="grosspay">
+                        </div>
                     
+                    </div>
+
+
+
+
+                    <div class="form-group row mb-3">
 
                     <div class="col-sm-6">
                         <label class="col-form-label">Total Dues</label>
                         <input type="number" min="0" class="form-control" name="total_dues" readonly id="totaldues">
                     </div>
 
+                        <div class="col-sm-6">
+                             <label class="col-form-label">Net Pay</label>
+                             <input type="number" min="0" class="form-control" name="net_pay" readonly id="netpay">
+                       </div>
+
+
+                      
                     </div>
 
+                    <div class="form-group row mb-3">
 
-
-                    <div class="form-group row">
-
-                        <div class="col-sm-6">
-                         <label class="col-form-label">Net Pay</label>
-                         <input type="number" min="0" class="form-control" name="net_pay" readonly id="netpay">
-                       </div>
 
 
                         <div class="col-sm-6">
                             <br>
-                           
-                           <button type="submit" name="suBMitPayroll" class="btn btn-primary btn-block .hor-grd .btn-grd-* mt-2">
+                           <button type="submit" name="suBMitPayroll" class="btn btn-primary btn-block form-control .hor-grd .btn-grd-* mt-2">
                                   Submit Payroll 
                             </button>
                         </div>
@@ -191,13 +193,8 @@
                 </form>
 
 
-
-                            
-
-
-
-                        <!-- </form> -->
-                            </div>
+               
+                          </div>
                         </div>  
                     </div>
 
@@ -207,8 +204,6 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-
-
 
 
 <script>
@@ -243,8 +238,8 @@
 
 
 
-            <script>
-        function payrollMaths_earnings() {
+<script>
+    function payrollMaths_earnings() {
         var basic_salary = document.getElementById("basic_salaryid").value;
         var allowance = document.getElementById("allowance").value;
         var other = document.getElementById("other").value;
@@ -260,8 +255,7 @@
         PayrollMaths_deduction();
        
 
-
-        function PayrollMaths_deduction() {
+    function PayrollMaths_deduction() {
             var loan_pay = document.getElementById("loan_pay").value;
             var sanction = document.getElementById("sanction").value;
             var otherdues = document.getElementById("otherdues").value;
@@ -281,7 +275,7 @@
 
 
 
-    function Fetch_Employee_basicSalary() {
+function Fetch_Employee_basicSalary() {
         var employeID = document.getElementById("Employeen").value;
         var months = document.getElementById("months").value;
         var years = document.getElementById("years").value;
@@ -297,7 +291,7 @@
 
 
 
-        function Fetch_salary(staffID) {
+function Fetch_salary(staffID) {
             $.ajax({
                 url: 'fetch_basic_salary/' + staffID,
                 type: 'get',
@@ -313,7 +307,7 @@
 
 
 
-        function check_if_staffExist(staff, datemont) {
+function check_if_staffExist(staff, datemont) {
             $.ajax({
                 url: 'check_ifStaff/' + staff + '&&' + datemont,
                 type: 'get',
@@ -358,10 +352,7 @@
        document.getElementById('total_per_each').value = number_format(getTotalAmount1);
  
     }
-
 </script>
-
-
 
 
 <script type="text/javascript">
@@ -434,13 +425,8 @@ function Choosesite_Get_Loan() {
             }
         };
         xmlhttp.open("GET",url,true);
-        xmlhttp.send();
-
-
-    
+        xmlhttp.send(); 
 }
 
 </script>
-
-
 

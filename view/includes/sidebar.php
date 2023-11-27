@@ -28,12 +28,26 @@
                                 </ul>
                             </li>
 
-                            <li>
+                          <!--   <li>
                                 <a href="?action=allPro" class=" waves-effect">
                                     <i class="ti-view-list-alt"></i>
                                     <span>Product</span>
                                 </a>
+                            </li> -->
+
+
+                              <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-view-list-alt"></i>
+                                    <span>Product</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="?action=AddItem">Create New Product</a></li>
+                                    <li><a href="?action=ViewProduct">View Product</a></li>
+                                   
+                                </ul>
                             </li>
+
 
                        <!--       <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -52,30 +66,42 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="ti-clipboard"></i>
-                                    <span>Stock</span>
+                                    <span>Stock-in</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=InStock">Shop Stock</a></li>
-                                    <li><a href="?action=WareStock">Warehouse Stock</a></li>
-                                    <!-- <li><a href="email-compose.html">Total Stock</a></li> -->
-                                    <li><a href="email-inbox.html">Return from Shop</a></li>
-                                    <li><a href="email-inbox.html">Return Outward</a></li>
+                                    <!-- <li><a href="?action=New_Purchase">Stock-in</a></li> -->
+                                    <li><a href="?action=Stockin">Stock-in</a></li>
+                                    <li><a href="?action=ViewStockin">View Stock-in</a></li>
                                 </ul>
                             </li>
 
-                            <li>
-                                <a href="?action=Catery" class=" waves-effect">
+
+                              <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-back-left"></i>
+                                    <span>Return</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="?action=ReturnDamage">Return Item</a></li>
+                                    <li><a href="?action=ViewReturnInvoice">Invoice Returned</a></li>
+                                </ul>
+                            </li>
+
+
+                            
+
+                                 <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="ti-folder"></i>
                                     <span>Category</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="?action=AddCategory">Add Category</a></li>
+                                    <li><a href="?action=ViewCategory">View Category</a></li>
+                                </ul>
                             </li>
 
-                            <li>
-                                <a href="?action=SupplierPage" class=" waves-effect">
-                                    <i class="ti-truck"></i>
-                                    <span>Supplier</span>
-                                </a>
-                            </li>
+                         
 
                              <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -83,20 +109,71 @@
                                     <span>Sales</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=sales">Sales</a></li>
-                                    <li><a href="?action=viewQuote">Invoice</a></li>
-                                    <li><a href="?action=creditSales">Credits Sales</a></li>
-                                    <li><a href="?action=Returnitem">Return from Customer</a></li>
-                                    <!-- <li><a href="email-compose.html">Return to Warehouse</a></li> -->
+                                    <li><a href="?action=Salesrep">Sales</a></li>
+                                    <!-- <li><a href="?action=selectSales">Sales</a></li> -->
+                                    <!-- <li><a href="?action=Invoice">Invoice</a></li> -->
                                 </ul>
                             </li>
 
+
                             <li>
+                                <a href="?action=Customer" class=" waves-effect">
+                                    <i class="ti-arrow-circle-left"></i>
+                                    <span>Approve Credit Sales</span>
+                                </a>
+                            </li>
+
+
+
+                            <li>
+                                <a href="?action=Customer" class=" waves-effect">
+                                    <i class="ti-angle-double-left"></i>
+                                    <span>Approve Adjusted Sales</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="?action=ReceivePaymentall" class=" waves-effect">
+                                    <i class="ti-check-box"></i>
+                                    <span>Receive Balance </span>
+                                </a>
+                            </li>
+
+
+
+                             <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-truck"></i>
+                                    <span>Supplier</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="?action=addVendor">Add Supplier</a></li>
+                                    <li><a href="?action=View_vendor">View Supplier</a></li>
+                                </ul>
+                            </li>
+
+
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ti-user"></i>
+                                    <span>Customers</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="?action=AddCustomer">Add Customer</a></li>
+                                    <li><a href="?action=ViewCustomer">View  Customer</a></li>
+                                    <li><a href="?action=ViewCusL">View Customer Ledger</a></li>
+                                </ul>
+                            </li>
+
+
+                         <!--    <li>
                                 <a href="?action=Customer" class=" waves-effect">
                                     <i class="ti-folder"></i>
                                     <span>Customers</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -104,11 +181,15 @@
                                     <span>Staff</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=Users">Staff</a></li>
-                                    <li><a href="?action=AddPayroll">Payroll</a></li>
-                                    <li><a href="email-compose.html">Disable Staff</a></li>
+                                    <li><a href="?action=addStaff">Add Staff</a></li>
+                                    <li><a href="?action=View_staff">View Staff</a></li>
+                                    <li><a href="?action=AddPayroll">Add Payroll</a></li>
+                                    <li><a href="?action=ViewPayroll">View Payroll</a></li>
+                                    <li><a href="#">Disable Staff</a></li>
                                 </ul>
                             </li>
+
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -117,7 +198,7 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="?action=AddExpense">Add New Expense</a></li>
-                                    <li><a href="?action=viewExpense">View Expense</a></li>
+                                    <li><a href="?action=AllRequest">View Expense</a></li>
                                 </ul>
                             </li>
 
@@ -127,11 +208,12 @@
                                     <span>Reports</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=salesReport">Sales Report</a></li>
-                                    <li><a href="?action=stockinReport">Stock Report</a></li>
-                                    <li><a href="email-read.html">Purchase Report</a></li>
-                                    <li><a href="email-compose.html">Payroll Report</a></li>
-                                    <li><a href="email-compose.html">Expense Report</a></li>
+                                    <li><a href="?action=salesReports">Sales Report</a></li>
+                                    <li><a href="?action=StockinReport">Stock Report</a></li>
+                                    <li><a href="?action=Expense">Expense Report</a></li>
+                                    <li><a href="?action=CusLedgerReport">Customer Ledger</a></li>
+                                    <li><a href="?action=Payrol_report">Payroll Report</a></li>
+                                    <!-- <li><a href="?action=home">Purchase Report</a></li> -->
                                 </ul>
                             </li>
 
@@ -141,9 +223,9 @@
                                     <span>Settings</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=ManagePrice">Price Adjustment</a></li>
-                                    <!-- <li><a href="email-inbox.html">Add Warehouse</a></li>
-                                    <li><a href="email-read.html">View Warehouse</a></li> -->
+                                  <li><a href="?action=ManagePrice">Price Adjustment</a></li>
+                                  <li><a href="?action=AddWarehouse">Add Warehouse</a></li>
+                                  <li><a href="?action=ViewWarehouse">View Warehouse</a></li> 
                                 </ul>
                             </li>
 
@@ -153,9 +235,10 @@
                                     <span>Message</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="?action=Message">Message Customers</a></li>
-                                    <li><a href="email-inbox.html">Message Single</a></li>
-                                    <li><a href="email-read.html">Message Staffs</a></li>
+                                    <li><a href="?action=SendEmail">Email Customers</a></li>
+                                    <li><a href="?action=SendSms">Sms Customers</a></li>
+                                    <li><a href="?action=send_Email_Single">Other Email</a></li>
+                                    <li><a href="?action=add_Sms_List">Other Sms</a></li>
                                 </ul>
                             </li>
 
@@ -164,3 +247,7 @@
                     <!-- Sidebar -->
                 </div>
             </div>
+
+
+
+

@@ -3,86 +3,127 @@
                                 <div class="col-md-8">
                                     <h6 class="page-title">Sales Report</h6>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="float-end d-none d-md-block">
-                                        <div class="dropdown">
-                                            <button  type="submit" class="btn   btn-danger btn-sm float-right" name="b_print" id="disnon" onClick="window.print();"><i class="fas fa-print"></i> Print
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                 <div class="col-md-4">
+                <div class="float-end d-none d-md-block">
+                    <div class="dropdown">
+                        <button  type="submit" class="btn   btn-danger btn-sm float-right" name="b_print" id="disnon" onClick="window.print();">
+      <i class="fas fa-print"></i> Print</button>
+                    </div>
+                </div>
+            </div>
+                               
                             </div>
+
+                           
                         </div>
 
-                        <div class="row mx-auto">
-                                <div class="col-md-4">
-                                    <!-- <label>Payment Method</label> -->
-                    
-                                 <input type="date" class="form-control" id="fromdate">
-                                    
 
-                                </div>
-                                <div class="col-md-4">
+                          <div data-repeater-list="group-a">
+             <div class="row" data-repeater-item>
+                                                 
+                                                  
 
-                                    <div>
-                                       
-                                   <input type="date" class="form-control" id="todate">
-                                    </div>
-                                </div>
+        <div  class="mb-3 col-lg-4">
+             <input type="date" name="fromdate"  class="form-control" id="fromdate">
+        </div>
 
+        <div  class="mb-3 col-lg-4">
+            <input type="date" class="form-control" name="todate" id="todate">
+        </div>
 
-                                <div class="col-md-4">
-                                  <div class="checkbox">
-                                    <!-- <button type="submit" class="btn btn-primary btn-block" onclick="fetchdstock()">Fetch Query</button> -->
-                                     <input type="submit" class="btn btn-primary btn-block form-control" value="Fecth Query" id="ValNO" onclick="mesansOFidentifacartion_change();getMeSalesTotal();getMeSalesTotalcash();" >
-                                        </div>
-                                </div>
-                                     
-                                  
-                            </div><br><br>
+        <div  class="mb-3 col-lg-4">
+           <input type="submit" class="btn btn-primary btn-block form-control" value="Search" id="ValNO" onclick="mesansOFidentifacartion_change();getMeSalesTotal();getMeSalesTotalcash();" >
+        </div>
 
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <table class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                            <thead>
-                                                <tr>
-                                                <th>No</th>
-                                                <th>Date</th> 
-                                                <th>Sales ID</th>
-                                                <th>Product Name</th>
-                                                <th> Price</th>
-                                                <th> Qty</th>
-                                                <th>Total</th> 
-                                                <th>Paid</th>
-                                                <th>Due</th>
-                                                </tr>
-                                            </thead>
 
+    </div>
+
+</div>
+
+
+                     
+
+                     <br><br>          
+                 <div class="row" id="div_print">  
+                <h5 class="mx-auto">
+                    <!-- <span>Sales Report For</span> -->
+                    <b>
+                    <span id="start"></span>
+                    <!-- <span class="text-danger">&nbsp;&nbsp;&nbsp;-To-&nbsp;</span> -->
+                    <span id="end"></span>
+                </b>
+                </h5>
+                <div class="table-responsive">
+                                           <table class="table table-xs table-striped table-bordered mb-0">
+                                              <thead>
+                                                    <tr>
+                                                    <th>No</th>
+                                                    <th>Date</th>
+                                                    <th>Sales ID</th>
+                                                    <th>Product Name</th>
+                                                    <th> Price</th>
+                                                    <th>Total</th> 
+                                                    </tr>
+                                               </thead>
                                             <tbody id="tblBody">
                                  
                                             </tbody>
-                                        </table>
+                                            </table>
 
-                                        <table class="mt-4 float-right" id="tabSum">
-                                            <tr>
-                                            <td class="bg-light">Total Sales Cash: </td>
-                                            <td><b class="form-control btn btn-primary" id="sum_total_cash">0.00</b></td>     
-                                            <td>&nbsp;</td>
-                                             <td class="bg-light"> Total Sales Amount:  </td>
-                                            <td><b class="form-control btn btn-success" id="sum_total_">0.00</b></td>
-                                            <td>&nbsp;&nbsp;</td>
-                                            </tr>
-                                        </table>
+                                             
 
+   
+    
+    
+
+
+ <table class="mt-4 float-left" >
+            <tr>
+                <td>&nbsp;</td>
+                <td class="bg-light"><?php //echo $message; ?></td>
+            </tr>
+        </table>
+ </form>
+
+
+                                             <table class="mt-4 float-right" id="tabSum">
+            <tr>
+                <td class="bg-light">Total Sales Cash: </td>
+                <td><b class="form-control btn btn-primary" id="sum_total_cash">0</b></td>     
+                <td>&nbsp;</td>
+                 <td class="bg-light"> Total Sales Amount:  </td>
+                <td><b class="form-control btn btn-success" id="sum_total_">0</b></td>
+                <td>&nbsp;&nbsp;</td>
+            </tr>
+        </table>
+
+                                       </div> 
                                     </div>
-                                </div>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
+ </div>
 
 
+                
+
+
+<script type="text/javascript"> 
+
+function startDate() {
+var fromdate = document.getElementById("fromdate").value;
+const d = new Date(fromdate);
+let getdate = d.toDateString();
+var all =  document.getElementById("start").innerHTML = getdate;
+}
+
+function End_date() {
+var todate = document.getElementById("todate").value;
+const d = new Date(todate);
+let getdate = d.toDateString();
+var all =  document.getElementById("end").innerHTML = getdate;
+}
+
+</script>
 
 
 <script>
@@ -115,7 +156,6 @@ function mesansOFidentifacartion_change() {
 }
 
 
-
 function getMeSalesTotal() {
         if (window.XMLHttpRequest) {
            // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -130,23 +170,12 @@ function getMeSalesTotal() {
     var url = "Control/ajaxController.php?gettotal="+tr;
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
-                 // document.getElementById("sum_total_").innerHTML = this.responseText;
-
-                var sumTotalCash = parseFloat(this.responseText); // Convert to a number if it's not already
-
-                // Format the number with commas for thousands separators
-                var formattedSum = sumTotalCash.toLocaleString();
-
-                // Set the formatted number as the innerHTML of the element
-                document.getElementById("sum_total_").innerHTML = formattedSum;
-
+                 document.getElementById("sum_total_").innerHTML = this.responseText;
             }
         };
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
 }
-
 
 
 function getMeSalesTotalcash() {
@@ -163,46 +192,11 @@ function getMeSalesTotalcash() {
     var url = "Control/ajaxController.php?gettotalcash="+tr;
     xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
-
-                 // document.getElementById("sum_total_cash").innerHTML = this.responseText;
-
-                 var sumTotalCash = parseFloat(this.responseText); // Convert to a number if it's not already
-
-                // Format the number with commas for thousands separators
-                var formattedSum = sumTotalCash.toLocaleString();
-
-                // Set the formatted number as the innerHTML of the element
-                document.getElementById("sum_total_cash").innerHTML = formattedSum;
-
+                 document.getElementById("sum_total_cash").innerHTML =this.responseText;
             }
         };
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
-}   
+}
+      
 </script>
-
-
-<style type="text/css">
-    @media print{
-        .sticky-footer, .scroll-to-top, .navbar, .navbar-nav, .sidebar, .sidebar-dark, .card-header, .form, .yu, .dataoption{
-            display: none !important;
-        }
-
-        #disnon {
-            display: none !important;
-        }
-
-        #ValNO {
-            display: none !important;
-        }
-
-
-        tr td:nth-child(even) {background: gray;}
-        tr td:nth-child(odd) {background: white;}
-    }
-
-    @page {
-        size: A4;
-    }
-</style>

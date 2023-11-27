@@ -26,7 +26,7 @@
     <?php require_once "model/function.php";
 $maineg = new mainClass();?>
 
-<body>
+<body class="bg-light">
 
  <!--    <div class="home-btn d-none d-sm-block">
         <a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a>

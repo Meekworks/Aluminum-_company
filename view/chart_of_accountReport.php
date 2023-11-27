@@ -1,11 +1,12 @@
     <div class="page-title-box">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h6 class="page-title">Stock Report</h6>
+                                    <h6 class="page-title">Chart of Account Report</h6>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="float-end d-none d-md-block">
                                         <div class="dropdown">
+                                            <a href="?action=ChartofAccount" class="d-none d-sm-inline-block btn-sm btn btn-primary shadow-sm float-right"> <i class="fas fa-arrow-circle-left fa-sm text-white-50 "> </i> Back</a>
                                             <button  type="submit" class="btn   btn-danger btn-sm float-right" name="b_print" id="disnon" onClick="window.print();"><i class="fas fa-print"></i> Print</button>
                                         </div>
                                     </div>
@@ -13,35 +14,30 @@
                             </div>
                         </div>
 
-                        
-                       <div class="row mx-auto"> 
-                        <div class="col-md-4">
-                            <!-- <label>Payment Method</label> -->
-            
-                         <input type="date" class="form-control" id="fromdate">
-                             
 
-                        </div>
-                        <div class="col-md-4">
+                        <div data-repeater-list="group-a">
+             <div class="row" data-repeater-item>
+                                                 
+                                                  
 
-                            <div>
-                               
-                           <input type="date" class="form-control" id="todate">
-                            </div>
-                        </div>
+        <div  class="mb-3 col-lg-4">
+            <input type="date" class="form-control" id="fromdate">
+        </div>
+
+        <div  class="mb-3 col-lg-4">
+            <input type="date" class="form-control" id="todate">
+        </div>
+
+        <div  class="mb-3 col-lg-4">
+           <input type="submit" class="btn btn-primary btn-block form-control" value="Get Report" id="ValNO" onclick="mesansOFidentifacartion_change();getMeSalesTotalcash();getMeSalesTotal();getMeSalesTotalPurchase();getMeSalesTotalSalary();getMeSalesTotalExpense();" >
+        </div>
 
 
-                        <div class="col-md-4">
-                          <div class="checkbox">
-                            <!-- <button type="submit" class="btn btn-primary btn-block" onclick="fetchdstock()">Fetch Query</button> -->
-                             <input type="submit" class="btn btn-primary btn-block form-control" value="Get Report" id="ValNO" onclick="mesansOFidentifacartion_change();getMeSalesTotalcash();getMeSalesTotal();getMeSalesTotalPurchase();getMeSalesTotalSalary();getMeSalesTotalExpense();" >
 
-                                </div>
-                        </div>
-                             
-                          
-                    </div>
-                    <br><br>
+    </div>
+
+</div>
+
 
 
                         <div class="row">
@@ -57,7 +53,7 @@
                                                 <th>Series Name</th>
                                                 <th>Account Type</th>
                                                 <th>Amount</th>
-                                                <th>Performed By</th>  
+                                                <th>Performed By</th>
                                                 </tr>
                                             </thead>
 
@@ -66,7 +62,7 @@
                                             </tbody>
                                         </table>
 
-                                        <table class="mt-4 float-right" id="tabSum">
+                                         <table class="mt-4 float-right" id="tabSum">
                                                 <tr>
                                                     <td class="bg-light">Total Sales: </td>
                                                     <td><b class="form-control btn btn-primary" id="sales">0</b></td>     
@@ -88,7 +84,7 @@
                                                     <td><b class="form-control btn btn-success" id="sum_expense">0</b></td>
                                                     <td>&nbsp;&nbsp;</td> 
                                                 </tr>
-                                        </table>
+                                            </table>
 
                                     </div>
                                 </div>
@@ -96,7 +92,7 @@
                         </div> <!-- end row -->
 
 
-
+ 
 <script>
 function mesansOFidentifacartion_change() {
         if (window.XMLHttpRequest) {
@@ -125,6 +121,8 @@ function mesansOFidentifacartion_change() {
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
 }
+
+
 
 
 
@@ -242,28 +240,3 @@ function getMeSalesTotalExpense() {
       
 </script>
 
-
-
-<style type="text/css">
-    @media print{
-        .sticky-footer, .scroll-to-top, .navbar, .navbar-nav, .sidebar, .sidebar-dark, .card-header, .form, .yu, .dataoption{
-            display: none !important;
-        }
-
-        #disnon {
-            display: none !important;
-        }
-
-        #ValNO {
-            display: none !important;
-        }
-
-
-        tr td:nth-child(even) {background: gray;}
-        tr td:nth-child(odd) {background: white;}
-    }
-
-    @page {
-        size: A4;
-    }
-</style>

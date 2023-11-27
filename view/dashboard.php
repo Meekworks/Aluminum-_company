@@ -87,7 +87,7 @@ window.onload=startclock;
                                             </div>
                                             <h5 class="font-size-16 text-uppercase text-white-50">All Stock</h5>
                                             <h4 class="fw-medium font-size-24"><?php $maineg = new mainClass();
-                                                        $result = $maineg->My_Count_Fetchstock('stock_table');
+                                                        $result = $maineg->My_Count_Fetchstock('stockin');
                                                         ?> 
                                             <i class="mdi mdi-arrow-up text-success ms-2"></i></h4>
                                            <!--  <div class="mini-stat-label bg-success">
@@ -111,11 +111,11 @@ window.onload=startclock;
                                             <div class="float-start mini-stat-img me-4">
                                                 <i class="fas fa-archive fa-2x text-white"></i>
                                             </div>
-                                            <h5 class="font-size-16 text-uppercase text-white-50">Low Stock</h5>
+                                            <h5 class="font-size-16 text-uppercase text-white-50">CUSTOMER</h5>
                                             <h4 class="fw-medium font-size-24">
                                                 <?php 
                                                   $maineg = new mainClass();
-                                                  $result = $maineg->My_Count_FetchLOWS('stock_table');
+                                                  $result = $maineg->My_Count_FetchstockCust('customer_table');
                                                 ?> 
                                             </h4>
                                         </div>
@@ -138,7 +138,7 @@ window.onload=startclock;
                                             <h5 class="font-size-16 text-uppercase text-white-50">Sales</h5>
                                             <h4 class="fw-medium font-size-24">
                                                 <?php $maineg = new mainClass();
-                                                    $result = $maineg->My_Count_Fetchtotal('invoice_details');
+                                                    $result = $maineg->My_Count_Fetchtotal('invoice_tbl');
                                                 ?> 
                                             </h4>
                                         </div>

@@ -1,6 +1,6 @@
  <?php 
             $maineg = new  mainClass();
-            $DBinfo = $maineg->Targeted_information('addtocart','id',$_GET['editAdd']);
+            $DBinfo = $maineg->Targeted_information('addtocart_new','id',$_GET['editAdd']);
             ?>     
     <div class="page-title-box">
         <div class="row align-items-center">
@@ -31,7 +31,7 @@
                                         <br>
                                          <label class="col-form-label">New Quantity</label>
                                          <input  type="text" class="form-control"  name="new_quantity">
-                                        <input type="text" hidden  name="price" value="<?php echo $DBinfo['price']; ?>">
+                                        <input type="text" hidden  name="price" value="<?php echo $DBinfo['selling_price']; ?>">
                                         <input type="text" hidden name="id" value="<?php echo $DBinfo['id']; ?>">
                                         </div><br>
 
